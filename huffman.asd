@@ -5,7 +5,9 @@
   :version "0.0.1"
   :author  "Takeru Ohta"
   :description "Common Lisp Huffman coding library"
-  
+
+  :depends-on (:bitop)
+
   :serial t
   :components ((:file "package")
 	       (:file "length-limited-huffman")))
