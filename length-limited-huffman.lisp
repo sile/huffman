@@ -1,11 +1,5 @@
 (in-package :huffman)
 
-(defstruct obj
-  (cost  0 :type fixnum :read-only t))
-
-(defstruct (code-obj (:include obj))
-  (code 0 :type fixnum :read-only t))
-
 (defstruct (packaged-obj 
             (:include obj)
             (:constructor package-obj (a b &aux (cost (+ (obj-cost a) (obj-cost b)))
