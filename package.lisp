@@ -1,6 +1,8 @@
 (defpackage :huffman
-  (:use :common-lisp)
-  (:export))
+  (:use :common-lisp :bitop)
+  (:export gen-encode-table
+	   restore-encode-table
+	   make-decoder))
 (in-package :huffman)
 
-(declaim (optimize (speed 3) (safety 0) (debug 0) (compilation-speed 0)))
+(deftype array-index () '(integer 0 #.array-total-size-limit))

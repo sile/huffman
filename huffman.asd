@@ -10,7 +10,9 @@
 
   :serial t
   :components ((:file "package")
+	       (:file "util")
 	       (:file "obj")
 	       (:file "length-limited-huffman")
 	       (:file "heap")
 	       (:file "huffman")))
+
