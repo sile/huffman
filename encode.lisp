@@ -5,14 +5,14 @@
   ;; TODO: check-type
   (declare (simple-octets bitlengths))
   (let* ((bitlen-limit (1+ (loop FOR len ACROSS bitlengths MAXIMIZE len)))
-	 (len-count    (make-fixnum-array bitlen-limit))
+	 (len-count    (make-array bitlen-limit :element-type 'fixnum :initial-element 0))
 	 (code-limit   (length bitlengths)))
     ;;
     (loop FOR len ACROSS bitlengths 
 	  WHEN (plusp len)
 	  DO   (incf (aref len-count len)))
     ;;
-    (let ((base-num-per-len (make-fixnum-array bitlen-limit)))
+    (let ((base-num-per-len (make-array bitlen-limit :element-type 'fixnum :initial-element 0)))
       (loop FOR i FROM 1 BELOW bitlen-limit DO
         (setf (aref base-num-per-len i)
 	      (ash (+ (aref base-num-per-len (1- i))
