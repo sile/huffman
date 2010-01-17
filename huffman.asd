@@ -2,7 +2,7 @@
 
 (defsystem huffman
   :name    "huffman"
-  :version "0.0.1"
+  :version "0.1.0"
   :author  "Takeru Ohta"
   :description "Common Lisp Huffman coding library"
 
@@ -12,7 +12,9 @@
   :components ((:file "package")
 	       (:file "util")
 	       (:file "obj")
-	       (:file "length-limited-huffman")
 	       (:file "heap")
-	       (:file "huffman")))
+	       (:file "huffman")
+	       (:file "length-limited-huffman")
+	       (:file "encode")))
+		      
 

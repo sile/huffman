@@ -1,5 +1,5 @@
 (in-package :huffman)
-(declaim (optimize (speed 3) (safety 0) (compilation-speed 0))
+(declaim #.*optimize*
 	 (ftype (function (array-index) (simple-array obj)) init-heap-buf)
          (inline upheap downheap heap-push heap-pop heap-pop2 heap-push-and-pop2))
 
