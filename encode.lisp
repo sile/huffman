@@ -28,6 +28,7 @@
 	  (incf (aref base-num-per-len code-bit-len)))
 	codes))))
 
+(declaim (ftype (function (&rest t) (simple-array fixbyte)) gen-encode-table))
 (defun gen-encode-table (#1=code-frequency-table &key length-limit reverse)
   (check-type #1# (simple-array fixnum))
   (let ((code->bitlen (if (null length-limit)
